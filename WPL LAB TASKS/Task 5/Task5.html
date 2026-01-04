@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      font-family: Arial, sans-serif;
+    }
+
+    .main-box {
+      width: 380px;
+      background: #ffffff;
+      margin: 90px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .main-box h2 {
+      text-align: center;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+
+    .main-box p {
+      text-align: center;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    input {
+      margin-bottom: 10px;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .signup-btn {
+      background: linear-gradient(90deg, #6366f1, #3b82f6);
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    .signup-btn:hover {
+      background: linear-gradient(90deg, #4f46e5, #2563eb);
+    }
+
+    .bottom-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .bottom-text a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: -6px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-box">
+    <h2>Create Account</h2>
+    <p>Sign up to get started</p>
+
+    <form onsubmit="return validate()">
+
+      <input type="text" id="name" class="form-control" value="Abdul Samad" placeholder="Full name">
+      <div id="nameErr" class="error"></div>
+
+      <input type="email" id="email" class="form-control" placeholder="example@email.com">
+      <div id="emailErr" class="error"></div>
+
+      <input type="password" id="pass" class="form-control" placeholder="New password">
+      <div id="passErr" class="error"></div>
+
+      <button class="btn signup-btn w-100 mt-2">Sign Up</button>
+    </form>
+
+    <div class="bottom-text">
+      Already have an account? <a href="#">Log in</a>
+    </div>
+  </div>
+
+  <script>
+    function validate() {
+      let ok = true;
+
+      nameErr.innerHTML = "";
+      emailErr.innerHTML = "";
+      passErr.innerHTML = "";
+
+      if (name.value.trim() === "") {
+        nameErr.innerHTML = "Name is required";
+        ok = false;
+      }
+
+      if (email.value.trim() === "") {
+        emailErr.innerHTML = "Email is required";
+        ok = false;
+      }
+
+      if (pass.value.trim() === "") {
+        passErr.innerHTML = "Password is required";
+        ok = false;
+      }
+
+      return ok;
+    }
+  </script>
+
+</body>
+</html>
